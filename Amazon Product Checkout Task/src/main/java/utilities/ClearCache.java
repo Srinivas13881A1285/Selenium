@@ -1,28 +1,42 @@
 package utilities;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class ClearCache {
-	WebDriver driver;
-	GenericFunction genericFunction = new GenericFunction(driver);
-	private By CLEAR_DATA = By.id("clearBrowsingDataConfirm");
+	private WebDriver driver;
+	
 	public ClearCache(WebDriver driver) {
 		this.driver = driver;
 	}
-	
-	
-	public void clickOnClearData() {
-		genericFunction.waitForElement(CLEAR_DATA);
-		driver.findElement(CLEAR_DATA).click();
-	}
 	 
 	public void getSettingsPage() {
-		driver.get("chrome://settings/clearBrowserData");
+		driver.get(Constants.CHROME_SETTINGS_PAGE);
+	}
+	
+	public void clickOnDropDown() {
+		for(int i=0;i<3;i++) {
+			driver.switchTo().activeElement().sendKeys(Keys.TAB);
+		}
+		driver.switchTo().activeElement().sendKeys(Keys.ENTER);
+	}
+	
+	public void chooseTimeRangeAllTime() {
+		for(int i=0;i<4;i++)
+			driver.switchTo().activeElement().sendKeys(Keys.ARROW_DOWN);
+		driver.switchTo().activeElement().sendKeys(Keys.ENTER);
+	}
+	
+	public void clickOnClearData() {
+		for(int i=0;i<5;i++)
+			driver.switchTo().activeElement().sendKeys(Keys.TAB);
+		driver.switchTo().activeElement().sendKeys(Keys.ENTER);
 	}
 
 	public void  clear_cache() {
 	    this.getSettingsPage();
+	    this.clickOnDropDown();
+	    this.chooseTimeRangeAllTime();
 	    this.clickOnClearData();
 	}
 }

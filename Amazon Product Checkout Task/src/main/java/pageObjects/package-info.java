@@ -1,8 +1,6 @@
+
 /**
- * 
- */
-/**
- * @author Srinivas_Chintakindh
- *
+ * @author Srinivas_Chintakindhi
+ * This package consists of page objects.
  */
 package pageObjects;

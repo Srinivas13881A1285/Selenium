@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class FactoryPatternDriver {
+public class WebDriverFactory {
 	private WebDriver driver;
 	public WebDriver getBrowserDriver(String browserType) {
 	switch(browserType) {

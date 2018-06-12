@@ -22,11 +22,11 @@ import pageObjects.AmazonSearchResultsPage;
 import utilities.ClearCache;
 import utilities.Constants;
 import utilities.ExcelReader;
-import utilities.FactoryPatternDriver;
+import utilities.WebDriverFactory;
 
 
 public class AmazonTest {
-	private FactoryPatternDriver factoryPattern;
+	private WebDriverFactory factoryPattern;
 	private String browserType;
 	private WebDriver driver;
 	private List<WebElement> productLinks;
@@ -45,15 +45,24 @@ public class AmazonTest {
 
 	@BeforeTest
 	public void setup()  {
-		factoryPattern = new FactoryPatternDriver();
+		factoryPattern = new WebDriverFactory();
 		excelReader = new ExcelReader();
 		browserType = excelReader.getBrowserType();
 		driver = factoryPattern.getBrowserDriver(browserType);
 		driver.manage().window().maximize();
-		//clearCache = new ClearCache(driver);
-		//clearCache.clear_cache();
+		clearCache = new ClearCache(driver);
+		clearCache.clear_cache();
 	}
+	
 
+	@Test
+	public void buyingItems() {
+		this.amazonLogin();
+		this.searchForProduct();
+		this.chooseRandomProduct();
+		this.addToCart();
+		this.deliveryOptionsAndCheckOut();
+	}
 
 	@AfterTest
 	public void afterMethod() {
@@ -65,22 +74,28 @@ public class AmazonTest {
 		return random.nextInt(productLinks.size() - 1);
 	}
 
-	@Test
-	public void buyingItems() {
+	
+	private void searchForProduct() {
+		amazonHomePage.searchforProductInAmazon(Constants.PRODUCT_NAME);
+		productLinks = amazonSearchResultsPage.getProductLinks();
+	}
+
+
+	private void chooseRandomProduct() {
+		int randomNumber = this.getRandomNumber();
+		amazonSearchResultsPage.clickOnProductLink(productLinks.get(randomNumber));
+	}
+	
+	private void amazonLogin() {
 		amazonHomePage = new AmazonHomePage(driver);
 		amazonSearchResultsPage = new AmazonSearchResultsPage(driver);
 		amazonHomePage.getAmazonHomePage();
 		amazonHomePage.clickOnSignIn();
 		amazonLoginPage = new AmazonLoginPage(driver);
 		amazonLoginPage.loginIntoAmazon();
-		amazonHomePage.searchforProductInAmazon(Constants.PRODUCT_NAME);
-		productLinks = amazonSearchResultsPage.getProductLinks();
-		int randomNumber = this.getRandomNumber();
-		amazonSearchResultsPage.clickOnProductLink(productLinks.get(randomNumber));
-		this.addToCartAndCheckOut();
 	}
 
-	private void addToCartAndCheckOut() {
+	private void addToCart() {
 		amazonProductPage = new AmazonProductPage(driver);
 		numberOfOpenedTabs = new ArrayList<String>(driver.getWindowHandles());
 		if (numberOfOpenedTabs.size() > 1) {
@@ -91,6 +106,10 @@ public class AmazonTest {
 		} else {
 			this.clickOnCartIcon();
 		}
+		
+	}
+	
+	private void deliveryOptionsAndCheckOut() {
 		amazonHomePage.clikOnGlobalCart();
 		amazonCartPage = new AmazonCartPage(driver);
 		amazonCartPage.clickOnProceedToCheckOut();

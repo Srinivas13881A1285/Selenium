@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class AmazonProductPage {
 	private WebDriver driver;
 
-	private By productTitle = By.xpath("//span[@id='productTitle']");
+	private By PRODUCT_TITLE = By.xpath("//span[@id='productTitle']");
 	private By ADD_TO_CART_BUTTON = By.id("add-to-cart-button");
 
 	public AmazonProductPage(WebDriver driver) {
@@ -14,7 +14,7 @@ public class AmazonProductPage {
 	}
 
 	public String getProductName() {
-		return driver.findElement(productTitle).getText();
+		return driver.findElement(PRODUCT_TITLE).getText();
 	}
 
 	public void clickOnAddToCart() {

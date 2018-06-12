@@ -8,14 +8,14 @@ import org.openqa.selenium.WebElement;
 
 public class AmazonSearchResultsPage {
 	private WebDriver driver;
-	private By productLinks = By.cssSelector(".s-access-title");
+	private By PRODUCT_LINKS = By.cssSelector(".s-access-title");
 
 	public AmazonSearchResultsPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	public List<WebElement> getProductLinks() {
-		return driver.findElements(productLinks);
+		return driver.findElements(PRODUCT_LINKS);
 	}
 
 	public void clickOnProductLink(WebElement webElement) {

@@ -3,6 +3,8 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import utilities.Constants;
+
 public class AmazonLoginPage {
 
 	private WebDriver driver;
@@ -18,7 +20,7 @@ public class AmazonLoginPage {
 	
 
 	public void setUserName(String userName) {
-		driver.findElement(USERNAME).sendKeys("srinusreenivas552@gmail.com");
+		driver.findElement(USERNAME).sendKeys(userName);
 	}
 
 	public void clickOnContinue() {
@@ -34,9 +36,9 @@ public class AmazonLoginPage {
 	}
 
 	public void loginIntoAmazon() {
-		this.setUserName("srinusreenivas552@gmail.com");
+		this.setUserName(Constants.USERNAME);
 		this.clickOnContinue();
-		this.setPassword("Jaico123");
+		this.setPassword(Constants.PASSWORD);
 		this.clickOnLogin();
 	}
 }

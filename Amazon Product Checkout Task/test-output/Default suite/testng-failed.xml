@@ -5,7 +5,7 @@
     <classes>
       <class name="testcases.AmazonTest">
         <methods>
-          <include name="addingItemsToCart"/>
+          <include name="buyingItems"/>
           <include name="setup"/>
           <include name="afterMethod"/>
         </methods>

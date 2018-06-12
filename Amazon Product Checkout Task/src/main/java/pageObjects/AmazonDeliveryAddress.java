@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class AmazonDeliveryAddress {
 
 	private WebDriver driver;
-	private By ADDRESS = By.cssSelector(".ship-to-this-address");
+	private By SHIPPING_ADDRESS = By.cssSelector(".ship-to-this-address");
 
 	public AmazonDeliveryAddress(WebDriver driver) {
 		this.driver = driver;
@@ -14,7 +14,7 @@ public class AmazonDeliveryAddress {
 
 
 	public void selectDeliveryAdddress() {
-		driver.findElement(ADDRESS).click();
+		driver.findElement(SHIPPING_ADDRESS).click();
 	}
 
 }

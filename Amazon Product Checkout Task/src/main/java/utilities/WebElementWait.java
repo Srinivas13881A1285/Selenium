@@ -5,15 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GenericFunction {
+public class WebElementWait {
 	
-	WebDriver driver;
-	WebDriverWait driverWait ;
-	public GenericFunction(WebDriver driver) {
+	private WebDriver driver;
+	private WebDriverWait driverWait ;
+	
+	public WebElementWait(WebDriver driver) {
 		this.driver = driver;
 	}
-	
-	
 	
 	public void waitForElement(By by) {
 		driverWait = new WebDriverWait(driver,20);

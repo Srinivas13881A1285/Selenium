@@ -8,10 +8,9 @@ import utilities.Constants;
 public class AmazonHomePage {
 
 	private WebDriver driver;
-
 	private final By SEARCH_BOX = By.id("twotabsearchtextbox");
 	private final By SEARCH_SUBMIT = By.xpath("//input[@value='Go']");
-	private final By CART = By.id("nav-cart-count");
+	private final By CART_ICON = By.id("nav-cart-count");
 	private final By SIGN_IN = By.id("nav-link-yourAccount");
 
 	public AmazonHomePage(WebDriver driver) {
@@ -36,7 +35,7 @@ public class AmazonHomePage {
 	}
 
 	public void clikOnGlobalCart() {
-		driver.findElement(CART).click();
+		driver.findElement(CART_ICON).click();
 	}
 
 	public void clickOnSignIn() {
