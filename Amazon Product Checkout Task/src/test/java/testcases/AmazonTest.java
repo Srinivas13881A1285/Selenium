@@ -11,18 +11,17 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageObjects.AmazonCartPage;
-import pageObjects.AmazonDeliveryAddress;
-import pageObjects.AmazonDeliveryOptions;
-import pageObjects.AmazonHomePage;
-import pageObjects.AmazonLoginPage;
-import pageObjects.AmazonPayment;
-import pageObjects.AmazonProductPage;
-import pageObjects.AmazonSearchResultsPage;
-import utilities.ClearCache;
-import utilities.Constants;
-import utilities.ExcelReader;
-import utilities.WebDriverFactory;
+import pageobject.AmazonCartPage;
+import pageobject.AmazonDeliveryAddress;
+import pageobject.AmazonDeliveryOptions;
+import pageobject.AmazonHomePage;
+import pageobject.AmazonLoginPage;
+import pageobject.AmazonPayment;
+import pageobject.AmazonProductPage;
+import pageobject.AmazonSearchResultsPage;
+import util.ClearCache;
+import util.ExcelReader;
+import util.WebDriverFactory;
 
 
 public class AmazonTest {
@@ -41,6 +40,7 @@ public class AmazonTest {
 	private AmazonPayment amazonPayment;
 	private ExcelReader excelReader;
 	private ClearCache clearCache;
+	private String productName;
 	
 
 	@BeforeTest
@@ -51,7 +51,7 @@ public class AmazonTest {
 		driver = factoryPattern.getBrowserDriver(browserType);
 		driver.manage().window().maximize();
 		clearCache = new ClearCache(driver);
-		clearCache.clear_cache();
+		clearCache.clearBrowsingData();
 	}
 	
 
@@ -76,7 +76,8 @@ public class AmazonTest {
 
 	
 	private void searchForProduct() {
-		amazonHomePage.searchforProductInAmazon(Constants.PRODUCT_NAME);
+		productName = excelReader.getProductName();
+		amazonHomePage.searchforProductInAmazon(productName);
 		productLinks = amazonSearchResultsPage.getProductLinks();
 	}
 
