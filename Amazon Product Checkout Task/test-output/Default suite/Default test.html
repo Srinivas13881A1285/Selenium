@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jun 12 15:16:06 IST 2018</td>
+<td>Started on:</td><td>Wed Jun 13 16:57:56 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>14 seconds (14437 ms)</td>
+<tr><td>Total time:</td><td>28 seconds (28936 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,12 +75,11 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testcases.AmazonTest.buyingItems()'><b>buyingItems</b><br>Test class: testcases.AmazonTest</td>
+<td title='uitest.AmazonTest.buyingItems()'><b>buyingItems</b><br>Test class: uitest.AmazonTest</td>
 <td><div><pre>java.lang.NullPointerException
-	at util.ExcelConfig.getData(ExcelConfig.java:28)
-	at util.ExcelReader.getProductName(ExcelReader.java:14)
-	at testcases.AmazonTest.searchForProduct(AmazonTest.java:80)
-	at testcases.AmazonTest.buyingItems(AmazonTest.java:61)
+	at pageobject.AmazonDeliveryOptions.cickOnContinue(AmazonDeliveryOptions.java:19)
+	at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:132)
+	at uitest.AmazonTest.buyingItems(AmazonTest.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -106,12 +105,11 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1166361824", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1166361824'><pre>java.lang.NullPointerException
-	at util.ExcelConfig.getData(ExcelConfig.java:28)
-	at util.ExcelReader.getProductName(ExcelReader.java:14)
-	at testcases.AmazonTest.searchForProduct(AmazonTest.java:80)
-	at testcases.AmazonTest.buyingItems(AmazonTest.java:61)
+</pre></div><a href='#' onClick='toggleBox("stack-trace836386144", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace836386144'><pre>java.lang.NullPointerException
+	at pageobject.AmazonDeliveryOptions.cickOnContinue(AmazonDeliveryOptions.java:19)
+	at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:132)
+	at uitest.AmazonTest.buyingItems(AmazonTest.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -138,8 +136,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>8</td>
-<td>testcases.AmazonTest@91161c7</td></tr>
+<td>21</td>
+<td>uitest.AmazonTest@91161c7</td></tr>
 </table><p>
 </body>
 </html>

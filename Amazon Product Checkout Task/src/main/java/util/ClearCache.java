@@ -2,7 +2,12 @@ package util;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
+/**
+ * 
+ * @author Srinivas_Chintakindh
+ * This class is used for clearing cache.
+ *
+ */
 public class ClearCache {
 	private WebDriver driver;
 	

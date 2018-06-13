@@ -1,16 +1,16 @@
 package util;
 
 public class ExcelReader {
-	private  final static String excelPath = PropertyReader.getProperty("testDataLocation");
+	private  final static String excelPath = PropertyReader.getTestDataFilePath("prerequisitesLocation");
 	
 	ExcelConfig excelConfig = new ExcelConfig(excelPath);
 	
-	public String getBrowserType() {
+	public String getBrowserName() {
 		
 		 return excelConfig.getData(0, 0, 0);
 	}
 
-	public String getProductName() {
+	public String getAmazonUrl() {
 		return excelConfig.getData(0, 1, 0);
 	}
 }

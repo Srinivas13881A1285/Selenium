@@ -3,11 +3,12 @@ package pageobject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import util.Constants;
+import util.ExcelReader;
 
 public class AmazonHomePage {
 
 	private WebDriver driver;
+	private ExcelReader excelReader;
 	private final By searchBox = By.id("twotabsearchtextbox");
 	private final By searchSubmit = By.xpath("//input[@value='Go']");
 	private final By cartIcon = By.id("nav-cart-count");
@@ -18,7 +19,8 @@ public class AmazonHomePage {
 	}
 
 	public void getAmazonHomePage() {
-		driver.get(Constants.AMAZON_WEBSITE);
+		excelReader = new ExcelReader();
+		driver.get(excelReader.getAmazonUrl());
 	}
 
 	public void setSearchBox(String searchFor) {

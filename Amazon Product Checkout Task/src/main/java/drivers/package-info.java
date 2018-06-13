@@ -1,5 +1,5 @@
 /**
- * @author Srinivas_Chintakindh
- * This package all browsers drivers.
+ * This package all browsers driver.exe fies.
+ * @author Srinivas_Chintakindhi
  */
 package drivers;

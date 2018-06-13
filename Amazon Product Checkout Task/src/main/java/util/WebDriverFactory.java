@@ -13,19 +13,19 @@ public class WebDriverFactory {
 	public WebDriver getBrowserDriver(String browserType) {
 	switch(browserType) {
 		
-		case "chrome" 	:	System.setProperty("webdriver.chrome.driver",PropertyReader.getProperty("webdriver.chrome.driver")); 
+		case "chrome" 	:	System.setProperty("webdriver.chrome.driver",PropertyReader.getDriverPath("webdriver.chrome.driver")); 
 							driver = new ChromeDriver();
 							break;
 		case "firefox"	: 
-							System.setProperty("webdriver.gecko.driver",PropertyReader.getProperty("webdriver.gecko.driver"));
+							System.setProperty("webdriver.gecko.driver",PropertyReader.getDriverPath("webdriver.gecko.driver"));
 							DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 							capabilities.setCapability("marionette",true);
 							driver = new FirefoxDriver(capabilities);
 							break;
-		case "iexplore" :  System.setProperty("webdriver.ie.driver", PropertyReader.getProperty("webdriver.ie.driver"));
+		case "iexplore" :  System.setProperty("webdriver.ie.driver", PropertyReader.getDriverPath("webdriver.ie.driver"));
 							driver = new InternetExplorerDriver();
 							break;
-		case "edge"	:		System.setProperty("webdriver.edge.driver",PropertyReader.getProperty("webdriver.edge.driver"));
+		case "edge"	:		System.setProperty("webdriver.edge.driver",PropertyReader.getDriverPath("webdriver.edge.driver"));
 							driver = new EdgeDriver();
 							break;
 		default		:     	driver =  null;

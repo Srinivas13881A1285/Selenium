@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse--1269770814\testng-customsuite.xml</span>
+                    <span>C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse--2105342623\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="testcases.AmazonTest" hash-for-method="buyingItems">buyingItems</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="uitest.AmazonTest" hash-for-method="buyingItems">buyingItems</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,7 +120,7 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">testcases.AmazonTest</span>
+              <span class="class-name">uitest.AmazonTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -129,10 +129,9 @@
                   </a> <!-- buyingItems -->
                   <span class="method-name">buyingItems</span>
                   <div class="stack-trace">java.lang.NullPointerException
-	at util.ExcelConfig.getData(ExcelConfig.java:28)
-	at util.ExcelReader.getProductName(ExcelReader.java:14)
-	at testcases.AmazonTest.searchForProduct(AmazonTest.java:80)
-	at testcases.AmazonTest.buyingItems(AmazonTest.java:61)
+	at pageobject.AmazonDeliveryOptions.cickOnContinue(AmazonDeliveryOptions.java:19)
+	at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:132)
+	at uitest.AmazonTest.buyingItems(AmazonTest.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -167,7 +166,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse--1269770814\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse--2105342623\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -176,7 +175,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testcases.AmazonTest&quot;/&gt;
+      &lt;class name=&quot;uitest.AmazonTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -219,13 +218,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'buyingItems')
-data.setCell(0, 2, 'testcases.AmazonTest')
-data.setCell(0, 3, 8696);
+data.setCell(0, 2, 'uitest.AmazonTest')
+data.setCell(0, 3, 21366);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 21 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -251,7 +250,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testcases.AmazonTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">uitest.AmazonTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
@@ -260,11 +259,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">buyingItems</span>
-                <span class="method-start">5078 ms</span>
+                <span class="method-start">6826 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">13776 ms</span>
+                <span class="method-start">28206 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -19,6 +19,7 @@ public class AmazonPayment {
 	private final By txt_CardNumber = By.id("newVerifiedDebitCardNumber");
 	private final By txt_CcvNumber = By.id("vdcCVVNum");
 	private final By addYourCard = By.cssSelector(".payment-selected #ccAddCard");
+	private final By errorBox = By.cssSelector("#newVDCErrors");
 
 
 	public AmazonPayment(WebDriver driver) {
@@ -59,6 +60,10 @@ public class AmazonPayment {
 
 	public void clickOnAddYourCard() {
 		driver.findElement(addYourCard).click();
+	}
+	
+	public boolean  checkErrorDisplay() {
+		return driver.findElement(errorBox).isDisplayed();
 	}
 
 	public void choosePaymentOption() {

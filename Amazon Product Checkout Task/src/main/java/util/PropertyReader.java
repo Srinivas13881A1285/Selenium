@@ -16,7 +16,12 @@ public class PropertyReader {
         }
     }
 
-    public static String getProperty(final String propertyName) {
-        return properties.getProperty(propertyName);
+    public static String getDriverPath(final String driverType) {
+        return properties.getProperty(driverType);
     }
+    
+    public static String getTestDataFilePath(final String fileName) {
+    	return properties.getProperty(fileName);
+    }
+    
 }

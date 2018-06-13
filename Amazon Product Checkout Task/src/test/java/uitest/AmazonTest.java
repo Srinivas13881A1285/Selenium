@@ -1,4 +1,6 @@
-package testcases;
+package uitest;
+
+import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,7 @@ import pageobject.AmazonPayment;
 import pageobject.AmazonProductPage;
 import pageobject.AmazonSearchResultsPage;
 import util.ClearCache;
+import util.Constants;
 import util.ExcelReader;
 import util.WebDriverFactory;
 
@@ -47,9 +50,12 @@ public class AmazonTest {
 	public void setup()  {
 		factoryPattern = new WebDriverFactory();
 		excelReader = new ExcelReader();
-		browserType = excelReader.getBrowserType();
+		// reading browser name  from excel in which test case to be executed.
+		browserType = excelReader.getBrowserName();
+		// getting specified driver from factory WebDriverFactory.
 		driver = factoryPattern.getBrowserDriver(browserType);
 		driver.manage().window().maximize();
+		// clearing data since cookies and sessions stored during last visit to this site.
 		clearCache = new ClearCache(driver);
 		clearCache.clearBrowsingData();
 	}
@@ -62,7 +68,13 @@ public class AmazonTest {
 		this.chooseRandomProduct();
 		this.addToCart();
 		this.deliveryOptionsAndCheckOut();
+		assertEquals(this.checkForErrorBox(), true);
 	}
+
+	private boolean checkForErrorBox() {
+		return amazonPayment.checkErrorDisplay();
+	}
+
 
 	@AfterTest
 	public void afterMethod() {
@@ -76,7 +88,7 @@ public class AmazonTest {
 
 	
 	private void searchForProduct() {
-		productName = excelReader.getProductName();
+		productName = Constants.PRODUCT_NAME;
 		amazonHomePage.searchforProductInAmazon(productName);
 		productLinks = amazonSearchResultsPage.getProductLinks();
 	}
