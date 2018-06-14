@@ -8,15 +8,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WebElementWait {
 	
 	private WebDriver driver;
-	private WebDriverWait driverWait ;
+	private WebDriverWait driverWait = new WebDriverWait(driver,20);
 	
 	public WebElementWait(WebDriver driver) {
 		this.driver = driver;
 	}
 	
 	public void waitForElement(By by) {
-		driverWait = new WebDriverWait(driver,20);
-		driverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		driverWait.until(ExpectedConditions.presenceOfElementLocated(by));
 	}
 	
 	public void waitForElement(By by, int timeout) {

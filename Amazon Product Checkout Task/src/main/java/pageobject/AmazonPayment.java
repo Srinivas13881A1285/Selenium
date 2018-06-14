@@ -5,12 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import util.Constants;
-import util.WebElementWait;
 
 public class AmazonPayment {
 
-	WebDriver driver;
-	private WebElementWait webElementWait;
+	private WebDriver driver;
 	private final By debitCardRadioButton = By.id("pm_new_verified_debit_card");
 	private final By selectedPaymentMethod = By.cssSelector(".selected-section");
 	private final By chooseCardDropDown = By.cssSelector(".a-dropdown-container ");
@@ -28,8 +26,6 @@ public class AmazonPayment {
 
 	
 	public void chooseDebitCardOption() {
-		webElementWait = new WebElementWait(driver);
-		webElementWait.waitForElement(debitCardRadioButton);
 		driver.findElement(debitCardRadioButton).click();
 	}
 
@@ -78,8 +74,6 @@ public class AmazonPayment {
 	}
 
 	public WebElement getSelectedPaymentMethod() {
-		webElementWait = new WebElementWait(driver);
-		webElementWait.waitForElement(selectedPaymentMethod);
 		return driver.findElement(selectedPaymentMethod);
 	}
 }

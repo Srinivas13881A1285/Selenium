@@ -2,21 +2,61 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28936" started-at="2018-06-13T11:27:56Z" finished-at="2018-06-13T11:28:25Z">
+  <suite name="Default suite" duration-ms="28302" started-at="2018-06-14T05:51:21Z" finished-at="2018-06-14T05:51:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28936" started-at="2018-06-13T11:27:56Z" finished-at="2018-06-13T11:28:25Z">
+    <test name="Default test" duration-ms="28302" started-at="2018-06-14T05:51:21Z" finished-at="2018-06-14T05:51:49Z">
       <class name="uitest.AmazonTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:uitest.AmazonTest@91161c7]" name="setup" is-config="true" duration-ms="6812" started-at="2018-06-13T11:27:56Z" finished-at="2018-06-13T11:28:03Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:uitest.AmazonTest@91161c7]" name="setup" is-config="true" duration-ms="5971" started-at="2018-06-14T05:51:21Z" finished-at="2018-06-14T05:51:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="buyingItems()[pri:0, instance:uitest.AmazonTest@91161c7]" name="buyingItems" duration-ms="21366" started-at="2018-06-13T11:28:03Z" finished-at="2018-06-13T11:28:24Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="FAIL" signature="buyingItems()[pri:0, instance:uitest.AmazonTest@91161c7]" name="buyingItems" duration-ms="21601" started-at="2018-06-14T05:51:27Z" finished-at="2018-06-14T05:51:48Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"pm_new_verified_debit_card"}
+  (Session info: chrome=67.0.3396.87)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPINHYDW0365', ip: '10.71.12.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\SRINIV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.87, webStorageEnabled: true}
+Session ID: 8d325dad075d420a895c815c81a4ecb9
+*** Element info: {Using=id, value=pm_new_verified_debit_card}]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at pageobject.AmazonDeliveryOptions.cickOnContinue(AmazonDeliveryOptions.java:19)
-at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:132)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"pm_new_verified_debit_card"}
+  (Session info: chrome=67.0.3396.87)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPINHYDW0365', ip: '10.71.12.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\SRINIV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.87, webStorageEnabled: true}
+Session ID: 8d325dad075d420a895c815c81a4ecb9
+*** Element info: {Using=id, value=pm_new_verified_debit_card}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:363)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+at pageobject.AmazonPayment.chooseDebitCardOption(AmazonPayment.java:29)
+at pageobject.AmazonPayment.choosePaymentOption(AmazonPayment.java:66)
+at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:134)
 at uitest.AmazonTest.buyingItems(AmazonTest.java:70)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -45,11 +85,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyingItems -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:uitest.AmazonTest@91161c7]" name="afterMethod" is-config="true" duration-ms="728" started-at="2018-06-13T11:28:24Z" finished-at="2018-06-13T11:28:25Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:uitest.AmazonTest@91161c7]" name="afterMethod" is-config="true" duration-ms="712" started-at="2018-06-14T05:51:48Z" finished-at="2018-06-14T05:51:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

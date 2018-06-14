@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class AmazonProductPage {
 	private WebDriver driver;
-
 	private final By productTitle = By.xpath("//span[@id='productTitle']");
 	private final By addToCartButton = By.id("add-to-cart-button");
 
