@@ -8,32 +8,45 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WebDriverFactory {
-	private WebDriver driver;
-	@SuppressWarnings("deprecation")
-	public WebDriver getBrowserDriver(String browserType) {
-	switch(Browser.valueOf(browserType.toUpperCase())) { 
+	private static WebDriver driverInstance;
+	private WebDriverFactory() {
 		
-		case CHROME 	:	System.setProperty("webdriver.chrome.driver",PropertyReader.getDriverPath("webdriver.chrome.driver")); 
-							driver = new ChromeDriver();
-							break;
-		case FIREFOX	: 
-							System.setProperty("webdriver.gecko.driver",PropertyReader.getDriverPath("webdriver.gecko.driver"));
-							DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-							capabilities.setCapability("marionette",true);
-							driver = new FirefoxDriver(capabilities);
-							break;
-		case IEXPLORER :  System.setProperty("webdriver.ie.driver", PropertyReader.getDriverPath("webdriver.ie.driver"));
-							driver = new InternetExplorerDriver();
-							break;
-		case EDGE	:		System.setProperty("webdriver.edge.driver",PropertyReader.getDriverPath("webdriver.edge.driver"));
-							driver = new EdgeDriver();
-							break;
-		default		:     	driver =  null;
+	}
+	
+	public static WebDriver getDriverInstance(String browserType) {
+		
+		if(driverInstance == null) {
+			switch(Browser.valueOf(browserType.toUpperCase())) { 
+		
+				case CHROME 	:	System.setProperty("webdriver.chrome.driver",PropertyReader.getDriverPath("webdriver.chrome.driver")); 
+									driverInstance = new ChromeDriver();
+									break;
+				case FIREFOX	: 
+									System.setProperty("webdriver.gecko.driver",PropertyReader.getDriverPath("webdriver.gecko.driver"));
+									DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+									capabilities.setCapability("marionette",true);
+									driverInstance = new FirefoxDriver(capabilities);
+									break;
+									
+				case IEXPLORER :  	System.setProperty("webdriver.ie.driver", PropertyReader.getDriverPath("webdriver.ie.driver"));
+									driverInstance = new InternetExplorerDriver();
+									break;
+									
+				case EDGE	   :	System.setProperty("webdriver.edge.driver",PropertyReader.getDriverPath("webdriver.edge.driver"));
+									driverInstance = new EdgeDriver();
+									break;
+									
+				default		   :    driverInstance =  null;
+			}		
 				
 	}
 		
-		return driver;
+		return driverInstance;
 		
+	}
+	
+	public static WebDriver getDriverInstance() {
+		return driverInstance;
 	}
 
 }

@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import util.ExcelReader;
-import util.SingleDriverFactory;
+import util.WebDriverFactory;
 
 public class AmazonHomePage {
 
-	private WebDriver driver = SingleDriverFactory.getDriver();
+	private WebDriver driver = WebDriverFactory.getDriverInstance();
 	private ExcelReader excelReader;
 	private final By searchBox = By.id("twotabsearchtextbox");
 	private final By searchSubmit = By.xpath("//input[@value='Go']");

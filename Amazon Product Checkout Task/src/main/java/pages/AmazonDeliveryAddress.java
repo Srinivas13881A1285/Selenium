@@ -3,11 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import util.SingleDriverFactory;
+import util.WebDriverFactory;
 
 public class AmazonDeliveryAddress {
 
-	private WebDriver driver = SingleDriverFactory.getDriver();
+	private WebDriver driver = WebDriverFactory.getDriverInstance();
 	private final By shipping_Address = By.cssSelector(".ship-to-this-address");
 
 

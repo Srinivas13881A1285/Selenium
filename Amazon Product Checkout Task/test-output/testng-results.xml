@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="51862" started-at="2018-06-15T08:13:45Z" finished-at="2018-06-15T08:14:37Z">
+  <suite name="Default suite" duration-ms="31376" started-at="2018-06-15T08:58:58Z" finished-at="2018-06-15T08:59:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="51862" started-at="2018-06-15T08:13:45Z" finished-at="2018-06-15T08:14:37Z">
+    <test name="Default test" duration-ms="31376" started-at="2018-06-15T08:58:58Z" finished-at="2018-06-15T08:59:30Z">
       <class name="uitest.AmazonTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:uitest.AmazonTest@91161c7]" name="setup" is-config="true" duration-ms="11969" started-at="2018-06-15T08:13:45Z" finished-at="2018-06-15T08:13:57Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:uitest.AmazonTest@91161c7]" name="setup" is-config="true" duration-ms="6381" started-at="2018-06-15T08:58:58Z" finished-at="2018-06-15T08:59:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="buyingItems()[pri:0, instance:uitest.AmazonTest@91161c7]" name="buyingItems" duration-ms="39116" started-at="2018-06-15T08:13:57Z" finished-at="2018-06-15T08:14:37Z">
+        <test-method status="FAIL" signature="buyingItems()[pri:0, instance:uitest.AmazonTest@91161c7]" name="buyingItems" duration-ms="24264" started-at="2018-06-15T08:59:05Z" finished-at="2018-06-15T08:59:29Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"pm_new_verified_debit_card"}
@@ -23,7 +23,7 @@ Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.1
 System info: host: 'EPINHYDW0365', ip: '10.71.13.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\SRINIV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.87, webStorageEnabled: true}
-Session ID: a99050aba4c00e43a9ae8112cc4bd074
+Session ID: ad1bbcd23472582f29dd3702eaf8231b
 *** Element info: {Using=id, value=pm_new_verified_debit_card}]]>
             </message>
             <full-stacktrace>
@@ -36,7 +36,7 @@ Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.1
 System info: host: 'EPINHYDW0365', ip: '10.71.13.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\SRINIV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.87, webStorageEnabled: true}
-Session ID: a99050aba4c00e43a9ae8112cc4bd074
+Session ID: ad1bbcd23472582f29dd3702eaf8231b
 *** Element info: {Using=id, value=pm_new_verified_debit_card}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -54,8 +54,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:363)
 at org.openqa.selenium.By$ById.findElement(By.java:188)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
-at pages.AmazonPayment.chooseDebitCardOption(AmazonPayment.java:29)
-at pages.AmazonPayment.choosePaymentOption(AmazonPayment.java:66)
+at pages.AmazonPayment.chooseDebitCardOption(AmazonPayment.java:27)
+at pages.AmazonPayment.choosePaymentOption(AmazonPayment.java:64)
 at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:125)
 at uitest.AmazonTest.buyingItems(AmazonTest.java:61)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -89,7 +89,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyingItems -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:uitest.AmazonTest@91161c7]" name="afterMethod" is-config="true" duration-ms="747" started-at="2018-06-15T08:14:37Z" finished-at="2018-06-15T08:14:37Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:uitest.AmazonTest@91161c7]" name="afterMethod" is-config="true" duration-ms="714" started-at="2018-06-15T08:59:29Z" finished-at="2018-06-15T08:59:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

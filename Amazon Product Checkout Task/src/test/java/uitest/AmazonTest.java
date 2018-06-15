@@ -23,7 +23,8 @@ import pages.AmazonProductPage;
 import pages.AmazonSearchResultsPage;
 import util.ClearCache;
 import util.Constants;
-import util.SingleDriverFactory;
+import util.ExcelReader;
+import util.WebDriverFactory;
 
 
 public class AmazonTest {
@@ -38,13 +39,17 @@ public class AmazonTest {
 	private AmazonDeliveryAddress amazonDeliveryAddress;
 	private AmazonDeliveryOptions amazonDeliveryOptions;
 	private AmazonPayment amazonPayment;
+	private ExcelReader excelReader;
+	private String browserName;
 	private ClearCache clearCache;
 	private String productName;
 
 
 	@BeforeTest
 	public void setup()  {
-		driver = SingleDriverFactory.getDriver();
+		excelReader = new ExcelReader();
+		browserName = excelReader.getBrowserName();
+		driver = WebDriverFactory.getDriverInstance(browserName);
 		driver.manage().window().maximize();
 		// clearing data since cookies and sessions stored during last visit to this site.
 		clearCache = new ClearCache(driver);

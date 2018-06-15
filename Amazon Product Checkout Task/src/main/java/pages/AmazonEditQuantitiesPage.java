@@ -3,10 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import util.SingleDriverFactory;
+import util.WebDriverFactory;
 
 public class AmazonEditQuantitiesPage {
-	private WebDriver driver = SingleDriverFactory.getDriver();
+	private WebDriver driver = WebDriverFactory.getDriverInstance();
 	private final By continueButton = By.cssSelector(".a-row.a-spacing-medium .sosp-continue-button .a-button-text");
 
 	public void cickOnContinue() {

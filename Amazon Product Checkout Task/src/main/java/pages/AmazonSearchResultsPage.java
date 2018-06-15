@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import util.SingleDriverFactory;
+import util.WebDriverFactory;
 
 
 public class AmazonSearchResultsPage {
-	private WebDriver driver = SingleDriverFactory.getDriver();
+	private WebDriver driver = WebDriverFactory.getDriverInstance();
 	private By PRODUCT_LINKS = By.cssSelector(".s-access-title");
 
 
