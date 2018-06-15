@@ -4,19 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import util.Constants;
+import util.SingleDriverFactory;
 
 public class AmazonLoginPage {
 
-	private WebDriver driver;
+	private WebDriver driver = SingleDriverFactory.getDriver();
 	private final By txt_UserName = By.id("ap_email");
 	private final By continueButton = By.id("continue");
 	private final By txt_Password = By.id("ap_password");
 	private final By login = By.id("signInSubmit");
-
-	public AmazonLoginPage(WebDriver driver) {
-		this.driver = driver;
-	}
-	
 	public void setUserName(String userName) {
 		driver.findElement(txt_UserName).sendKeys(userName);
 	}

@@ -5,10 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import util.Constants;
+import util.SingleDriverFactory;
 
 public class AmazonPayment {
 
-	private WebDriver driver;
+	private WebDriver driver = SingleDriverFactory.getDriver();
 	private final By debitCardRadioButton = By.id("pm_new_verified_debit_card");
 	private final By selectedPaymentMethod = By.cssSelector(".selected-section");
 	private final By chooseCardDropDown = By.cssSelector(".a-dropdown-container ");
@@ -20,9 +21,6 @@ public class AmazonPayment {
 	private final By errorBox = By.cssSelector("#newVDCErrors");
 
 
-	public AmazonPayment(WebDriver driver) {
-		this.driver = driver;
-	}
 
 	
 	public void chooseDebitCardOption() {

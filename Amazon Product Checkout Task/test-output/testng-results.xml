@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28302" started-at="2018-06-14T05:51:21Z" finished-at="2018-06-14T05:51:49Z">
+  <suite name="Default suite" duration-ms="51862" started-at="2018-06-15T08:13:45Z" finished-at="2018-06-15T08:14:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28302" started-at="2018-06-14T05:51:21Z" finished-at="2018-06-14T05:51:49Z">
+    <test name="Default test" duration-ms="51862" started-at="2018-06-15T08:13:45Z" finished-at="2018-06-15T08:14:37Z">
       <class name="uitest.AmazonTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:uitest.AmazonTest@91161c7]" name="setup" is-config="true" duration-ms="5971" started-at="2018-06-14T05:51:21Z" finished-at="2018-06-14T05:51:27Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:uitest.AmazonTest@91161c7]" name="setup" is-config="true" duration-ms="11969" started-at="2018-06-15T08:13:45Z" finished-at="2018-06-15T08:13:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="buyingItems()[pri:0, instance:uitest.AmazonTest@91161c7]" name="buyingItems" duration-ms="21601" started-at="2018-06-14T05:51:27Z" finished-at="2018-06-14T05:51:48Z">
+        <test-method status="FAIL" signature="buyingItems()[pri:0, instance:uitest.AmazonTest@91161c7]" name="buyingItems" duration-ms="39116" started-at="2018-06-15T08:13:57Z" finished-at="2018-06-15T08:14:37Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"pm_new_verified_debit_card"}
@@ -20,10 +20,10 @@
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
-System info: host: 'EPINHYDW0365', ip: '10.71.12.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+System info: host: 'EPINHYDW0365', ip: '10.71.13.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\SRINIV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.87, webStorageEnabled: true}
-Session ID: 8d325dad075d420a895c815c81a4ecb9
+Session ID: a99050aba4c00e43a9ae8112cc4bd074
 *** Element info: {Using=id, value=pm_new_verified_debit_card}]]>
             </message>
             <full-stacktrace>
@@ -33,10 +33,10 @@ Session ID: 8d325dad075d420a895c815c81a4ecb9
 Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
-System info: host: 'EPINHYDW0365', ip: '10.71.12.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+System info: host: 'EPINHYDW0365', ip: '10.71.13.121', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\SRINIV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.87, webStorageEnabled: true}
-Session ID: 8d325dad075d420a895c815c81a4ecb9
+Session ID: a99050aba4c00e43a9ae8112cc4bd074
 *** Element info: {Using=id, value=pm_new_verified_debit_card}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -54,10 +54,10 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:363)
 at org.openqa.selenium.By$ById.findElement(By.java:188)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
-at pageobject.AmazonPayment.chooseDebitCardOption(AmazonPayment.java:29)
-at pageobject.AmazonPayment.choosePaymentOption(AmazonPayment.java:66)
-at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:134)
-at uitest.AmazonTest.buyingItems(AmazonTest.java:70)
+at pages.AmazonPayment.chooseDebitCardOption(AmazonPayment.java:29)
+at pages.AmazonPayment.choosePaymentOption(AmazonPayment.java:66)
+at uitest.AmazonTest.deliveryOptionsAndCheckOut(AmazonTest.java:125)
+at uitest.AmazonTest.buyingItems(AmazonTest.java:61)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -89,7 +89,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyingItems -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:uitest.AmazonTest@91161c7]" name="afterMethod" is-config="true" duration-ms="712" started-at="2018-06-14T05:51:48Z" finished-at="2018-06-14T05:51:49Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:uitest.AmazonTest@91161c7]" name="afterMethod" is-config="true" duration-ms="747" started-at="2018-06-15T08:14:37Z" finished-at="2018-06-15T08:14:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
