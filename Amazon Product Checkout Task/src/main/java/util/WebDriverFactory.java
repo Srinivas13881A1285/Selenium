@@ -11,7 +11,7 @@ public class WebDriverFactory {
 	private WebDriver driver;
 	@SuppressWarnings("deprecation")
 	public WebDriver getBrowserDriver(String browserType) {
-	switch(Test.valueOf(browserType.toUpperCase())) { 
+	switch(Browser.valueOf(browserType.toUpperCase())) { 
 		
 		case CHROME 	:	System.setProperty("webdriver.chrome.driver",PropertyReader.getDriverPath("webdriver.chrome.driver")); 
 							driver = new ChromeDriver();
