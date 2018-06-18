@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,48 +22,62 @@ import pages.AmazonLoginPage;
 import pages.AmazonPayment;
 import pages.AmazonProductPage;
 import pages.AmazonSearchResultsPage;
-import util.ClearCache;
 import util.Constants;
 import util.ExcelReader;
 import util.WebDriverFactory;
 
-
 public class AmazonTest {
-	private WebDriver driver;
-	private List<WebElement> productLinks;
-	private List<String> numberOfOpenedTabs;
-	private AmazonHomePage amazonHomePage;
-	private AmazonSearchResultsPage amazonSearchResultsPage;
-	private AmazonProductPage amazonProductPage;
-	private AmazonCartPage amazonCartPage;
-	private AmazonLoginPage amazonLoginPage;
-	private AmazonDeliveryAddress amazonDeliveryAddress;
-	private AmazonDeliveryOptions amazonDeliveryOptions;
-	private AmazonPayment amazonPayment;
-	private ExcelReader excelReader;
-	private String browserName;
-	private ClearCache clearCache;
-	private String productName;
-
+	private WebDriver driver = null;
+	private List<WebElement> productLinks = null;
+	private List<String> numberOfOpenedTabs = null;
+	private AmazonHomePage amazonHomePage = null;
+	private AmazonSearchResultsPage amazonSearchResultsPage = null;
+	private AmazonProductPage amazonProductPage = null;
+	private AmazonCartPage amazonCartPage = null;
+	private AmazonLoginPage amazonLoginPage = null;
+	private AmazonDeliveryAddress amazonDeliveryAddress = null;
+	private AmazonDeliveryOptions amazonDeliveryOptions = null;
+	private AmazonPayment amazonPayment = null;
+	private ExcelReader excelReader = null;
+	private String browserName = null;
+	private String productName = null;
+	private int randomNumber = 0;
 
 	@BeforeTest
-	public void setup()  {
+	public void setup() {
 		excelReader = new ExcelReader();
 		browserName = excelReader.getBrowserName();
-		driver = WebDriverFactory.getDriverInstance(browserName);
+		WebDriverFactory.setDriverInstance(browserName);
+		driver = WebDriverFactory.getDriverInstance();
 		driver.manage().window().maximize();
-		// clearing data since cookies and sessions stored during last visit to this site.
-		clearCache = new ClearCache(driver);
-		clearCache.clearBrowsingData();
+		driver.manage().deleteAllCookies();
+		amazonCartPage = new AmazonCartPage();
 	}
-	
 
-	@Test
-	public void buyingItems() {
+	@Test(priority = 1)
+	public void loginIntoAmazon() {
 		amazonLogin();
-		searchForProduct();
+		assertEquals(amazonHomePage.isLogined(), true, "Login Failed");
+	}
+
+	@Test(priority = 2)
+	public void searchForTheProduct() {
+		searchForProduct(Constants.PRODUCT_NAME);
+		assertEquals(amazonSearchResultsPage.isSearchSuccessFul(Constants.PRODUCT_NAME), true, "search failed");
+	}
+
+	@Test(priority = 3)
+	public void addingToCart() {
 		chooseRandomProduct();
 		addToCart();
+		String randomProductName = productLinks.get(randomNumber).getText();
+		System.out.println("Random Product Name :" + randomProductName);
+		amazonHomePage.clikOnGlobalCart();
+		assertEquals(amazonCartPage.isElementAdded(randomProductName), true);
+	}
+
+	@Test(priority = 4)
+	public void delandPay() {
 		deliveryOptionsAndCheckOut();
 		assertEquals(this.checkForErrorBox(), true);
 	}
@@ -71,30 +86,26 @@ public class AmazonTest {
 		return amazonPayment.checkErrorDisplay();
 	}
 
-
 	@AfterTest
 	public void afterMethod() {
 		driver.quit();
 	}
-	
+
 	private int getRandomNumber() {
 		Random random = new Random();
 		return random.nextInt(productLinks.size() - 1);
 	}
 
-	
-	private void searchForProduct() {
-		productName = Constants.PRODUCT_NAME;
+	private void searchForProduct(String productName) {
 		amazonHomePage.searchforProductInAmazon(productName);
 		productLinks = amazonSearchResultsPage.getProductLinks();
 	}
 
-
 	private void chooseRandomProduct() {
-		int randomNumber = this.getRandomNumber();
+		randomNumber = getRandomNumber();
 		amazonSearchResultsPage.clickOnProductLink(productLinks.get(randomNumber));
 	}
-	
+
 	private void amazonLogin() {
 		amazonHomePage = new AmazonHomePage();
 		amazonSearchResultsPage = new AmazonSearchResultsPage();
@@ -115,26 +126,26 @@ public class AmazonTest {
 		} else {
 			this.clickOnCartIcon();
 		}
-		
+
 	}
-	
+
 	private void deliveryOptionsAndCheckOut() {
 		amazonHomePage.clikOnGlobalCart();
 		amazonCartPage = new AmazonCartPage();
 		amazonCartPage.clickOnProceedToCheckOut();
 		amazonDeliveryAddress = new AmazonDeliveryAddress();
 		amazonDeliveryAddress.selectDeliveryAdddress();
-		amazonDeliveryOptions = new AmazonDeliveryOptions() ;
+		amazonDeliveryOptions = new AmazonDeliveryOptions();
 		amazonDeliveryOptions.cickOnContinue();
 		amazonPayment = new AmazonPayment();
 		amazonPayment.choosePaymentOption();
 	}
-	
+
 	private void clickOnCartIcon() {
 		try {
 			amazonProductPage.clickOnAddToCart();
 		} catch (NoSuchElementException e) {
-			System.out.println("add cart button is not present");
+			System.out.println("Add Cart Button is not present");
 		}
 	}
 

@@ -8,13 +8,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WebDriverFactory {
-	private static WebDriver driverInstance;
+	private static WebDriver driverInstance = null;
 	private WebDriverFactory() {
-		
 	}
 	
-	public static WebDriver getDriverInstance(String browserType) {
-		
+	public static void setDriverInstance(String browserType) {
 		if(driverInstance == null) {
 			switch(Browser.valueOf(browserType.toUpperCase())) { 
 		
@@ -41,7 +39,6 @@ public class WebDriverFactory {
 				
 	}
 		
-		return driverInstance;
 		
 	}
 	

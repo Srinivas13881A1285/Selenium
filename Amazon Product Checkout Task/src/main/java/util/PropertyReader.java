@@ -10,7 +10,7 @@ public class PropertyReader {
         properties = new Properties();
         try {
             properties.load(new FileInputStream
-                    ("src/main/java/property/app.properties"));
+                    ("src/main/resources/properties/app.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
