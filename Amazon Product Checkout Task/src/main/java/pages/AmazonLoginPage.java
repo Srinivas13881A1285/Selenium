@@ -31,9 +31,9 @@ public class AmazonLoginPage {
 	}
 
 	public void loginIntoAmazon() {
-		this.setUserName(Constants.USERNAME);
-		this.clickOnContinue();
-		this.setPassword(Constants.PASSWORD);
-		this.clickOnLogin();
+		setUserName(Constants.USERNAME);
+		clickOnContinue();
+		setPassword(Constants.PASSWORD);
+		clickOnLogin();
 	}
 }

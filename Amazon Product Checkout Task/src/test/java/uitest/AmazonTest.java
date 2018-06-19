@@ -86,7 +86,7 @@ public class AmazonTest {
 	@Test(priority = 4)
 	public void deliveryAndPayment() {
 		deliveryOptionsAndCheckOut();
-		assertEquals(this.checkForErrorBox(), true);
+		assertEquals(checkForErrorBox(), true);
 	}
 
 	@AfterTest
@@ -123,11 +123,11 @@ public class AmazonTest {
 		numberOfOpenedTabs = new ArrayList<String>(driver.getWindowHandles());
 		if (numberOfOpenedTabs.size() > 1) {
 			driver.switchTo().window(numberOfOpenedTabs.get(1));
-			this.clickOnCartIcon();
+			clickOnCartIcon();
 			driver.close();
 			driver.switchTo().window(numberOfOpenedTabs.get(0));
 		} else {
-			this.clickOnCartIcon();
+			clickOnCartIcon();
 		}
 
 	}
