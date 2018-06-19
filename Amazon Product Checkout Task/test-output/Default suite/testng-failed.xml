@@ -5,7 +5,6 @@
     <classes>
       <class name="uitest.AmazonTest">
         <methods>
-          <include name="addingToCart"/>
           <include name="searchForTheProduct"/>
           <include name="setup"/>
           <include name="afterMethod"/>

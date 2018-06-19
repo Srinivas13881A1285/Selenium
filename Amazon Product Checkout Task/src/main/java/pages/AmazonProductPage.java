@@ -20,6 +20,6 @@ public class AmazonProductPage {
 
 	public void clickOnAddToCart() {
 		driver.findElement(addToCartButton).click();
-		webElementWait.waitForInvisibility(loaderIcon);	
+		webElementWait.waitForInvisibility(loaderIcon);
 	}
 }

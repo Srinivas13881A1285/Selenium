@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse-317407602\testng-customsuite.xml</span>
+                    <span>C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse--12435815\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -100,11 +100,6 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
                     <div class="method-list-content failed suite-Default_suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="uitest.AmazonTest" hash-for-method="addingToCart">addingToCart</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="uitest.AmazonTest" hash-for-method="searchForTheProduct">searchForTheProduct</a> <!-- method navigator-link -->
@@ -121,7 +116,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="uitest.AmazonTest" hash-for-method="delandPay">delandPay</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="uitest.AmazonTest" hash-for-method="addingToCart">addingToCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="uitest.AmazonTest" hash-for-method="deliveryAndPayment">deliveryAndPayment</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -149,42 +149,6 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addingToCart">
-                  </a> <!-- addingToCart -->
-                  <span class="method-name">addingToCart</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at uitest.AmazonTest.addingToCart(AmazonTest.java:76)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="searchForTheProduct">
                   </a> <!-- searchForTheProduct -->
                   <span class="method-name">searchForTheProduct</span>
@@ -194,7 +158,7 @@
 	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:568)
-	at uitest.AmazonTest.searchForTheProduct(AmazonTest.java:66)
+	at uitest.AmazonTest.searchForTheProduct(AmazonTest.java:74)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -234,9 +198,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="delandPay">
-                  </a> <!-- delandPay -->
-                  <span class="method-name">delandPay</span>
+                  <a name="addingToCart">
+                  </a> <!-- addingToCart -->
+                  <span class="method-name">addingToCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deliveryAndPayment">
+                  </a> <!-- deliveryAndPayment -->
+                  <span class="method-name">deliveryAndPayment</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -251,7 +222,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse-317407602\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Srinivas_Chintakindh\AppData\Local\Temp\testng-eclipse--12435815\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -302,26 +273,26 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'delandPay')
+data.setCell(0, 1, 'deliveryAndPayment')
 data.setCell(0, 2, 'uitest.AmazonTest')
-data.setCell(0, 3, 14661);
+data.setCell(0, 3, 13813);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'loginIntoAmazon')
 data.setCell(1, 2, 'uitest.AmazonTest')
-data.setCell(1, 3, 7379);
+data.setCell(1, 3, 9333);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'searchForTheProduct')
 data.setCell(2, 2, 'uitest.AmazonTest')
-data.setCell(2, 3, 5692);
+data.setCell(2, 3, 8846);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'addingToCart')
 data.setCell(3, 2, 'uitest.AmazonTest')
-data.setCell(3, 3, 3333);
+data.setCell(3, 3, 7185);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 39 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -354,27 +325,25 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">loginIntoAmazon</span>
-                <span class="method-start">4546 ms</span>
+                <span class="method-start">7432 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">searchForTheProduct</span>
-                <span class="method-start">11928 ms</span>
+                <span class="method-start">16767 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">addingToCart</span>
-                <span class="method-start">17622 ms</span>
+                <span class="method-start">25615 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">delandPay</span>
-                <span class="method-start">20957 ms</span>
+                <span class="method-name">deliveryAndPayment</span>
+                <span class="method-start">32801 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">35619 ms</span>
+                <span class="method-start">46615 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

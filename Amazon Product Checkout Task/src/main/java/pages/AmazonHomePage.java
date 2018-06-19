@@ -11,13 +11,13 @@ public class AmazonHomePage {
 
 	private WebDriver driver = WebDriverFactory.getDriverInstance();
 	private WebElementWait webElementWait = new WebElementWait();
-	private ExcelReader excelReader;
 	private final By searchBox = By.id("twotabsearchtextbox");
 	private final By searchSubmit = By.xpath("//input[@value='Go']");
 	private final By cartIcon = By.id("nav-cart-count");
 	private final By signIn = By.id("nav-link-yourAccount");
 	private final By loaderIcon = By.id("loading-spinner-img");
 	private final By userName = By.cssSelector("#nav-link-yourAccount .nav-line-1");
+	private ExcelReader excelReader;
 
 	public void getAmazonHomePage() {
 		excelReader = new ExcelReader();
@@ -50,7 +50,7 @@ public class AmazonHomePage {
 	public String getUserName() {
 		return driver.findElement(userName).getText();
 	}
-	
+
 	public boolean isLogined() {
 		return !driver.findElement(userName).getText().equalsIgnoreCase("Hello , Sign in");
 	}

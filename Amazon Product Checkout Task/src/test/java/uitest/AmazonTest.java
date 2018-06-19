@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -51,7 +50,16 @@ public class AmazonTest {
 		driver = WebDriverFactory.getDriverInstance();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
+		productName = Constants.PRODUCT_NAME;
 		amazonCartPage = new AmazonCartPage();
+		amazonHomePage = new AmazonHomePage();
+		amazonDeliveryAddress = new AmazonDeliveryAddress();
+		amazonDeliveryOptions = new AmazonDeliveryOptions();
+		amazonLoginPage = new AmazonLoginPage();
+		amazonPayment = new AmazonPayment();
+		amazonProductPage = new AmazonProductPage();
+		amazonSearchResultsPage = new AmazonSearchResultsPage();
+		
 	}
 
 	@Test(priority = 1)
@@ -62,7 +70,7 @@ public class AmazonTest {
 
 	@Test(priority = 2)
 	public void searchForTheProduct() {
-		searchForProduct(Constants.PRODUCT_NAME);
+		searchForProduct(productName);
 		assertEquals(amazonSearchResultsPage.isSearchSuccessFul(Constants.PRODUCT_NAME), true, "search failed");
 	}
 
@@ -71,24 +79,23 @@ public class AmazonTest {
 		chooseRandomProduct();
 		addToCart();
 		String randomProductName = productLinks.get(randomNumber).getText();
-		System.out.println("Random Product Name :" + randomProductName);
 		amazonHomePage.clikOnGlobalCart();
 		assertEquals(amazonCartPage.isElementAdded(randomProductName), true);
 	}
 
 	@Test(priority = 4)
-	public void delandPay() {
+	public void deliveryAndPayment() {
 		deliveryOptionsAndCheckOut();
 		assertEquals(this.checkForErrorBox(), true);
-	}
-
-	private boolean checkForErrorBox() {
-		return amazonPayment.checkErrorDisplay();
 	}
 
 	@AfterTest
 	public void afterMethod() {
 		driver.quit();
+	}
+
+	private boolean checkForErrorBox() {
+		return amazonPayment.checkErrorDisplay();
 	}
 
 	private int getRandomNumber() {
@@ -107,16 +114,12 @@ public class AmazonTest {
 	}
 
 	private void amazonLogin() {
-		amazonHomePage = new AmazonHomePage();
-		amazonSearchResultsPage = new AmazonSearchResultsPage();
 		amazonHomePage.getAmazonHomePage();
 		amazonHomePage.clickOnSignIn();
-		amazonLoginPage = new AmazonLoginPage();
 		amazonLoginPage.loginIntoAmazon();
 	}
 
 	private void addToCart() {
-		amazonProductPage = new AmazonProductPage();
 		numberOfOpenedTabs = new ArrayList<String>(driver.getWindowHandles());
 		if (numberOfOpenedTabs.size() > 1) {
 			driver.switchTo().window(numberOfOpenedTabs.get(1));
@@ -133,11 +136,8 @@ public class AmazonTest {
 		amazonHomePage.clikOnGlobalCart();
 		amazonCartPage = new AmazonCartPage();
 		amazonCartPage.clickOnProceedToCheckOut();
-		amazonDeliveryAddress = new AmazonDeliveryAddress();
 		amazonDeliveryAddress.selectDeliveryAdddress();
-		amazonDeliveryOptions = new AmazonDeliveryOptions();
 		amazonDeliveryOptions.cickOnContinue();
-		amazonPayment = new AmazonPayment();
 		amazonPayment.choosePaymentOption();
 	}
 

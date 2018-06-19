@@ -9,13 +9,11 @@ import org.openqa.selenium.WebElement;
 import util.WebDriverFactory;
 import util.WebElementWait;
 
-
 public class AmazonSearchResultsPage {
 	private WebDriver driver = WebDriverFactory.getDriverInstance();
 	private WebElementWait webElementWait = new WebElementWait();
 	private By productLinks = By.cssSelector(".s-access-title");
 	private final By loaderIcon = By.id("loading-spinner-img");
-
 
 	public List<WebElement> getProductLinks() {
 		webElementWait.waitForPresenceOfAllElements(productLinks);
@@ -33,9 +31,10 @@ public class AmazonSearchResultsPage {
 	}
 
 	public boolean isSearchSuccessFul(String productName) {
-		List<WebElement>products = getProductLinks();
-		long count = products.stream().filter((WebElement e) -> e.getText().toLowerCase().contains(productName))
-				.count();
-		return count == products.size();
+		List<WebElement> searchResultProducts = getProductLinks();
+		long numOfValidProducts = searchResultProducts.stream()
+													  .filter(productWebElement -> productWebElement.getText().toLowerCase().contains(productName))
+													  .count();
+		return numOfValidProducts == searchResultProducts.size();
 	}
 }

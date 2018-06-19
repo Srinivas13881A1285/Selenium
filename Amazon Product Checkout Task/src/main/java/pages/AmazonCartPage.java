@@ -33,7 +33,6 @@ public class AmazonCartPage {
 	}
 	
 	public boolean isElementAdded(String randomProductName) {
-		System.out.println("method called");
 		List<WebElement> cartItems = getCartItems();
 		boolean itemPresent = false;
 		for (WebElement we : cartItems) {

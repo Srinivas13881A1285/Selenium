@@ -11,7 +11,7 @@ import util.WebElementWait;
 public class AmazonPayment {
 
 	private WebDriver driver = WebDriverFactory.getDriverInstance();
-	private WebElementWait webElementWait= new WebElementWait();
+	private WebElementWait webElementWait = new WebElementWait();
 	private final By debitCardRadioButton = By.id("pm_new_verified_debit_card");
 	private final By selectedPaymentMethod = By.cssSelector(".payment-selected");
 	private final By chooseCardDropDown = By.cssSelector(".a-dropdown-container");
@@ -23,22 +23,18 @@ public class AmazonPayment {
 	private final By errorBox = By.cssSelector("#newVDCErrors");
 	private final By loaderIcon = By.id("loading-spinner-img");
 
-
-
-	
 	public void chooseDebitCardOption() {
 		webElementWait.waitForInvisibility(loaderIcon);
 		webElementWait.waitForElementVisibility(debitCardRadioButton);
 		driver.findElement(debitCardRadioButton).click();
 	}
 
-
-	public void getChooseCard() {
+	private void getChooseCard() {
 		WebElement selectedRow = getSelectedPaymentMethod();
-		 selectedRow.findElement(chooseCardDropDown).click();
+		selectedRow.findElement(chooseCardDropDown).click();
 	}
 
-	public void choosingBankCard() {
+	private void choosingBankCard() {
 		webElementWait.waitForElementPresence(chooseCard);
 		driver.findElement(chooseCard).click();
 	}
@@ -58,8 +54,8 @@ public class AmazonPayment {
 	public void clickOnAddYourCard() {
 		driver.findElement(addYourCard).click();
 	}
-	
-	public boolean  checkErrorDisplay() {
+
+	public boolean checkErrorDisplay() {
 		return driver.findElement(errorBox).isDisplayed();
 	}
 
@@ -74,7 +70,7 @@ public class AmazonPayment {
 
 	}
 
-	public WebElement getSelectedPaymentMethod() {
+	private WebElement getSelectedPaymentMethod() {
 		return driver.findElement(selectedPaymentMethod);
 	}
 }

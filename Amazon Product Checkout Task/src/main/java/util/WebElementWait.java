@@ -58,4 +58,5 @@ public class WebElementWait {
 	public void waitForPresenceOfAllElements(By by) {
 		driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
 	}
+	
 }

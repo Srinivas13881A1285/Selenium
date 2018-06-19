@@ -13,6 +13,7 @@ public class AmazonLoginPage {
 	private final By continueButton = By.id("continue");
 	private final By txt_Password = By.id("ap_password");
 	private final By login = By.id("signInSubmit");
+
 	public void setUserName(String userName) {
 		driver.findElement(txt_UserName).sendKeys(userName);
 	}
